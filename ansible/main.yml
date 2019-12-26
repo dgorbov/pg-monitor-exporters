@@ -1,0 +1,9 @@
+# main playbook for exporters software provisioning
+---
+- name: Main playbook
+  hosts: pg_exporter
+
+  tasks:  
+  - name: Ping
+    ping:
+...
