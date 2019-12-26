@@ -1,0 +1,8 @@
+postgresql_host: 127.0.0.1
+postgresql_port: 5432
+postgresql_user: postgres
+postgresql_pwd: postgres
+postgresql_db: postgres
+
+postgresql_exporter_link: http://github.com/wrouesnel/postgres_exporter/releases/download/v0.8.0/postgres_exporter_v0.8.0_linux-amd64.tar.gz
+node_exporter_link: https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_exporter-0.18.1.linux-amd64.tar.gz
