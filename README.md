@@ -17,5 +17,5 @@ s3 bucket and dynamoDB lock table already provided in `backend.tf`. No need to s
 terraform init -backend-config="region=eu-central-1" -backend-config="profile=default"
 terraform apply
 cd ansible
-ansible-playbook main.yml 
+ansible-playbook installation.yml 
 ```
