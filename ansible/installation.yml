@@ -1,0 +1,15 @@
+---
+- hosts: 
+    - postgres
+  vars_files:
+    - vars/basic.yml
+  roles:
+    - postgres_exporter
+
+- hosts: 
+    - nginx
+  vars_files:
+    - vars/basic.yml
+  roles:
+    - filebeat
+...
