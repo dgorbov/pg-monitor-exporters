@@ -8,5 +8,5 @@ variable "aws_profile" {
 
 variable "allowed_cidr" {
   type = list(string)
-  default = ["77.105.178.135/32", "109.106.142.117/32", "213.87.128.194/32"]
+  default = ["109.106.142.117/32", "82.151.125.64/32"]
 }

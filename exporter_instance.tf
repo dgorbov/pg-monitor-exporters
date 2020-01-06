@@ -23,6 +23,13 @@ resource "aws_security_group" "exporter_rules" {
     protocol    = "tcp"
     cidr_blocks = var.allowed_cidr
   }
+
+  ingress {
+    from_port   = 9100
+    to_port     = 9100
+    protocol    = "tcp"
+    cidr_blocks = var.allowed_cidr
+  }
 }
 
 data "aws_ami" "ubuntu_latest" {

@@ -1,15 +1,7 @@
 ---
 - hosts: 
-    - postgres
-  vars_files:
-    - vars/basic.yml
+    - pg_exporter
   roles:
     - postgres_exporter
-
-- hosts: 
-    - nginx
-  vars_files:
-    - vars/basic.yml
-  roles:
-    - filebeat
+    - node_exporter
 ...

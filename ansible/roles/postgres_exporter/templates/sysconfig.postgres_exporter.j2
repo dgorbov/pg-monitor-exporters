@@ -1,2 +1,2 @@
-DATA_SOURCE_NAME="postgresql://{{ postgresql_user }}:{{ postgresql_pwd }}@{{ postgresql_host }}:{{ postgresql_port }}/{{ postgresql_db }}"
+DATA_SOURCE_NAME="postgresql://{{ postgres_user }}:{{ postgres_pwd }}@{{ postgres_host }}:{{ postgres_port }}/{{ postgres_db }}"
 FLAGS="--auto-discover-databases --extend.query-path=/opt/postgres_exporter/queries.yml"
