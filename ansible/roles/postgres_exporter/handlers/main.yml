@@ -1,0 +1,7 @@
+---
+- name: Restart postgres_exporter service
+  become: yes
+  systemd:
+    name: postgres_exporter
+    state: restarted
+...

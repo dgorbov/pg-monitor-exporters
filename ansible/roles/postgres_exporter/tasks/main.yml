@@ -39,6 +39,7 @@
       owner: root
       group: root
       mode: '0644'
+    notify: Restart postgres_exporter service
 
   - name: Create postgres_exporter directory
     file:
@@ -55,6 +56,7 @@
       owner: postgres_exporter
       group: postgres_exporter
       mode: '0644'
+    notify: Restart postgres_exporter service
 
   - name: Force systemd to reread configs
     systemd:
