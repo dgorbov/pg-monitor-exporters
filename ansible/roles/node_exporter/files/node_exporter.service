@@ -1,10 +1,16 @@
 [Unit]
-Description=Node Exporter
+Description=Node Exporter - prometheus exporter for hardware and OS metrics.
+Documentation=https://github.com/prometheus/node_exporter
+After=network.target
 
 [Service]
+Type=simple
 User=node_exporter
+Group=node_exporter
 EnvironmentFile=/etc/default/node_exporter
 ExecStart=/usr/sbin/node_exporter $OPTIONS
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target

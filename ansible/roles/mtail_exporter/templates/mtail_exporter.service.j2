@@ -1,0 +1,15 @@
+[Unit]
+Description=mtail - extract whitebox monitoring data from application logs
+Documentation=https://github.com/google/mtail
+After=network.target
+
+[Service]
+Type=simple
+User=mtail_exporter
+Group=mtail_exporter
+ExecStart=/opt/mtail_exporter/mtail --progs /opt/mtail_exporter/progs --logs {{ nginx_logs_directory }}
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

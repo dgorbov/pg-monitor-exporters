@@ -1,0 +1,54 @@
+- block:
+  - name: Add the mtail_exporter user
+    user:
+      name: mtail_exporter
+      shell: /sbin/nologin
+
+  - name: Create the mtail_exporter directory
+    file:
+      path: /opt/mtail_exporter
+      state: directory
+      owner: mtail_exporter
+      group: mtail_exporter
+      mode: '0755'
+
+  - name: Download mtail
+    get_url:
+      url: "{{ mtail_link }}"
+      dest: /opt/mtail_exporter/mtail
+      owner: mtail_exporter
+      group: mtail_exporter
+      mode: '0755'
+    register: result
+    until: result is success
+    retries: 5
+    delay: 3
+
+  - name: Copy the mtail_exporter prog file
+    copy:
+      src: nginx_combined.mtail
+      dest: /opt/mtail_exporter/progs/
+      owner: mtail_exporter
+      group: mtail_exporter
+      mode: '0644'
+
+  - name: Copy the mtail_exporter unit file
+    template:
+      src: templates/mtail_exporter.service.j2
+      dest: /etc/systemd/system/mtail_exporter.service
+      owner: root
+      group: root
+      mode: '0644'
+
+  - name: Force systemd to reread configs
+    systemd:
+      daemon_reload: yes
+
+  - name: Start the mtail_exporter service
+    systemd:
+      name: mtail_exporter
+      enabled: yes
+      state: started
+
+  when: ansible_facts['distribution'] == 'Ubuntu' and ansible_facts['architecture'] == 'x86_64'
+  become: yes
