@@ -1,0 +1,4 @@
+DATA_SOURCE_NAME="postgresql://{{ postgres_user }}:{{ postgres_pwd }}@{{ postgres_host }}:{{ postgres_port }}?sslmode=disable"
+PG_EXPORTER_AUTO_DISCOVER_DATABASES="true"
+PG_EXPORTER_EXCLUDE_DATABASES="rdsadmin"
+PG_EXPORTER_EXTEND_QUERY_PATH="/opt/postgres_exporter/queries.yml"

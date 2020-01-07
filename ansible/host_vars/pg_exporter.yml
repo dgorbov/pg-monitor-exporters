@@ -5,6 +5,8 @@ postgres_host                   : demodb-server.c1c8nid7cpx8.eu-central-1.rds.am
 postgres_port                   : 5432
 postgres_db                     : demodb
 postgres_user                   : postgres
-postgres_pwd                    : HybXgHR4b3SuiYSB
-postgres_exporter_datasource    : postgresql://postgres:HybXgHR4b3SuiYSB@demodb-server.c1c8nid7cpx8.eu-central-1.rds.amazonaws.com:5432/postgres?sslmode=disable
+postgres_pwd                    : 2DhETYxlIawdLUw8
+
+postgresql_exporter_link        : http://github.com/wrouesnel/postgres_exporter/releases/download/v0.8.0/postgres_exporter_v0.8.0_linux-amd64.tar.gz
+node_exporter_link              : https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_exporter-0.18.1.linux-amd64.tar.gz
 ...

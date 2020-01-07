@@ -1,0 +1,7 @@
+---
+- hosts: 
+    - pg_exporter
+  roles:
+    - postgres_exporter
+    - node_exporter
+...
